@@ -1,7 +1,12 @@
 {
     "validUser": {
         "userName": "standard_user",
-        "password": "secret_sauce"
+        "password": "secret_sauce",
+        "firstName": "Michael",
+        "lastName": "Jordan",
+        "postalCode": "12345",
+        "paymentMethod": "SauceCard #31337",
+        "shippingInfo": "FREE PONY EXPRESS DELIVERY!"
     },
     "invalidPasswordUser": {
         "userName": "standard_user",

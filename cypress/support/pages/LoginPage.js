@@ -1,6 +1,6 @@
 export let LoginPage = {
-    UserName: () =>cy.get('#user-name'),
-    Password: () => cy.get('#password'),
-    LoginButton: () => cy.get('.login-box .btn_action'),
-    ErrorMessage: () => cy.get('[data-test="error"]'),
+    getUsername: () =>cy.get('#user-name'),
+    getPassword: () => cy.get('#password'),
+    getLoginBtn: () => cy.get('.login-box .btn_action'),
+    getErrorMesage: () => cy.get('[data-test="error"]'),
   };

@@ -1,0 +1,19 @@
+{
+    "product1": {
+        "productName": "Sauce Labs Backpack",
+        "addToCartName": "sauce-labs-backpack",
+        "price": "29.99"
+    },
+    "product2": {
+        "productName":"Sauce Labs Bike Light",
+        "addToCartName": "sauce-labs-bike-light",
+        "price": "9.99"
+    },
+    "orderInfo": {
+        "itemTotal": "39.98",
+        "tax": "3.20",
+        "orderTotal": "43.18"
+    }
+    
+}
+  

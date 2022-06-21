@@ -1,35 +1,39 @@
 /// <reference types="Cypress" />
 import { LoginPage } from '../../support/pages/LoginPage';
-import { CartPage } from '../../support/pages/CartPage';
+import { ProductPage } from '../../support/pages/ProductPage';
 
 beforeEach(() => {
     cy.visit('https://www.saucedemo.com/');
   })
 
-describe('TS01: Login Test Suite', () => {
-    it('TC01: Verify user can login with valid credentials', () => {
+describe('Check Login Functionality', () => {
+    it('Verify user is able to login with valid credentials then log out', () => {
         cy.fixture('users').then((userData) => {
-          LoginPage.UserName().type(userData.validUser.userName);
-          LoginPage.Password().type(userData.validUser.password);
-          LoginPage.LoginButton().click();
-          CartPage.PageTitle().should('have.text','Products');
+          LoginPage.getUsername().type(userData.validUser.userName);
+          LoginPage.getPassword().type(userData.validUser.password);
+          LoginPage.getLoginBtn().click();
+          ProductPage.getPageTitle().should('have.text','Products');
+          ProductPage.getBurgerMenu().click();
+          ProductPage.getLogoutLink().click();
+          LoginPage.getLoginBtn().should('be.visible');
         })
     })
 
-    it('TC02: Verify user is not able login with invalid password', () => {
+    it('Verify user is not able login with invalid password', () => {
         cy.fixture('users').then((userData) => {
-          LoginPage.UserName().type(userData.invalidPasswordUser.userName);
-          LoginPage.Password().type(userData.invalidPasswordUser.password);
-          LoginPage.LoginButton().click();
-          LoginPage.ErrorMessage().should('have.text', 'Epic sadface: Username and password do not match any user in this service')
+          LoginPage.getUsername().type(userData.invalidPasswordUser.userName);
+          LoginPage.getPassword().type(userData.invalidPasswordUser.password);
+          LoginPage.getLoginBtn().click();
+          LoginPage.getErrorMesage().should('have.text', 'Epic sadface: Username and password do not match any user in this service')
         })
     })
-    it('TC03: Verify locked out user is not able login', () => {
+    
+    it('Verify locked out user is not able login', () => {
         cy.fixture('users').then((userData) => {
-          LoginPage.UserName().type(userData.lockedOutUser.userName);
-          LoginPage.Password().type(userData.lockedOutUser.password);
-          LoginPage.LoginButton().click();
-          LoginPage.ErrorMessage().should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
+          LoginPage.getUsername().type(userData.lockedOutUser.userName);
+          LoginPage.getPassword().type(userData.lockedOutUser.password);
+          LoginPage.getLoginBtn().click();
+          LoginPage.getErrorMesage().should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
         })
     })
 
