@@ -10,8 +10,6 @@ Cypress Setup
 1. Install Node.js https://nodejs.org/en/
 2. Install Visual Code Studio
 3. In VS Code Terminal > Run "npm install cypress --save-dev"
-4. Run "npm install --save-dev mochawesome"
-5. Run "npm install --save-dev mocha"
 
 How to Run using Cypress UI
 1. Open VS Code Terminal
