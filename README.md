@@ -16,3 +16,4 @@ How to Run using Cypress UI
 2. Type "npx cypress open"
 3. Click login.spec.js
 4. Click shop.spec.js
+5. Verify results in Cypress
